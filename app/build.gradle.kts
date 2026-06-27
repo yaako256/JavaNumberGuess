@@ -1,24 +1,30 @@
 plugins {
-    kotlin("jvm") version "2.2.0"
-    application
+    id("com.android.application") version "8.3.2"
+    id("org.jetbrains.kotlin.android") version "2.0.21"
 }
 
-repositories {
-    mavenCentral()
+android {
+    namespace = "com.javanumberguess"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.javanumberguess"
+        minSdk = 24
+        targetSdk = 34
+    }
+
+    compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
-    implementation(libs.guava)
-}
-
-application {
-    mainClass.set("main.AppKt")
-}
-
-tasks.jar {
-    manifest {
-        attributes(
-            "Main-Class" to "main.AppKt"
-        )
-    }
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
 }

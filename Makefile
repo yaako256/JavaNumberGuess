@@ -5,7 +5,7 @@
 # ========================================
 # 開発コマンド
 # ========================================
-.PHONY: init run ps
+.PHONY: init run ps android
 
 ## 開発開始時に最初に1回行うGradleの初期設定
 init:
@@ -14,6 +14,9 @@ init:
 ## 実行用
 run:
 	docker compose run --rm app
+
+android:
+	docker compose run --rm android
 
 # docker compose build --no-cache app
 

@@ -1,11 +1,18 @@
 // app/src/main/kotlin/App.kt
-package main
+package com.javanumberguess
 
-fun main() {
-    println("hello from Kotlin")
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
-    // Javaのクラスとメソッドを呼び出す
-    val message = MessageProvider.getMessage()
-    println("Kotlin says: $message")
+class MainActivity : AppCompatActivity() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        Log.d("APP", "Hello Android from Logcat")
+
+        val message = MessageProvider.getMessage()
+        Log.d("APP", message)
+    }
 }
