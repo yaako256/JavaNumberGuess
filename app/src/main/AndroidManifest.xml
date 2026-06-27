@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <application
         android:label="JavaNumberGuess"
-        android:allowBackup="true">
+        android:allowBackup="true"
+         android:theme="@style/Theme.JavaNumberGuess">
 
         <activity
             android:name=".MainActivity"

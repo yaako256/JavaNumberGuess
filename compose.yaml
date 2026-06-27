@@ -19,22 +19,14 @@ services:
     stdin_open: true
     tty: true
 
-  # ビルド/実行をする用
-  app:
-    container_name: java_numver_guess_build
-
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: runtime
-
-    working_dir: /workspace
-
   # アンドロイドのapkを作る用
   android:
+    container_name: java_numver_guess_android
+
     build:
       context: .
       dockerfile: Dockerfile
       target: android
+
     volumes:
       - .:/workspace
