@@ -5,31 +5,17 @@
 # ========================================
 # 開発コマンド
 # ========================================
-.PHONY: init
+.PHONY: init run ps
 
 ## 開発開始時に最初に1回行うGradleの初期設定
 init:
 	docker compose run --rm gradle-init
 
+## 実行用
+run:
+	docker compose run --rm app
 
-
-# ========================================
-# 開発コマンド
-# ========================================
-.PHONY: build stop down ps
-
-## Dockerを立ち上げ、プロジェクトのビルドをする
-build:
-	docker compose up --build
-
-## Dockerを停止する
-stop:
-	docker compose stop
-
-
-## DockerをDownさせる
-down:
-	docker compose down
+# docker compose build --no-cache app
 
 ## 立ち上がっているかを確認する
 ps:
@@ -46,7 +32,7 @@ chown:
 
 ## フォルダツリーを表示 (自作Pythonスクリプト実行)
 tree:
-	python3 ./generate_tree_ver2.py . 100 target .git .sqlx frontend
+	python3 ./generate_tree_ver2.py . 100 .git build .gradle
 
 ## このMakefileのヘルプメッセージを表示
 # `#`が3つのものを検知し、グループ名を表示している

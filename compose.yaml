@@ -3,9 +3,29 @@
 name: JavaNumberGuess
 
 services:
-  android:
-    container_name: android-build
+  # Gradleの初回設定用
+  gradle-init:
+    container_name: java_numver_guess_init
 
     build:
       context: .
       dockerfile: Dockerfile
+      target: init
+
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+
+    stdin_open: true
+    tty: true
+
+  # ビルド/実行をする用
+  app:
+    container_name: java_numver_guess_build
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+
+    working_dir: /workspace

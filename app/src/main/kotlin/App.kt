@@ -1,9 +1,11 @@
-// src/HelloWorld.kt
+// app/src/main/kotlin/App.kt
+package main
 
 fun main() {
-    print("hello from Kotlin")
+    println("hello from Kotlin")
 
     // Javaのクラスとメソッドを呼び出す
     val message = MessageProvider.getMessage()
     println("Kotlin says: $message")
+
 }

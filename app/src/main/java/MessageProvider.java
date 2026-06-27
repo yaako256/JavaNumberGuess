@@ -1,4 +1,4 @@
-// src/MessageProvider.java
+// app/src/main/java/MessageProvider.java
 
 public class MessageProvider {
     public static String getMessage() {
