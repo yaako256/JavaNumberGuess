@@ -1,0 +1,11 @@
+# compose.yaml
+
+name: JavaNumberGuess
+
+services:
+  android:
+    container_name: android-build
+
+    build:
+      context: .
+      dockerfile: Dockerfile
