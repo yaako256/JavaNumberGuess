@@ -1,6 +1,0 @@
-<resources>
-
-    <style name="Theme.JavaNumberGuess"
-        parent="Theme.AppCompat.Light.NoActionBar" />
-
-</resources>
